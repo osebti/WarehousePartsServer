@@ -1,0 +1,228 @@
+openapi: 3.0.0
+info:
+  title: CMPUT 401 Assignment API DOCS
+  description: PC HARDWARE PARTS
+  version: 1.0.0
+
+
+paths:
+  /parts/{id}:
+    post:
+      parameters:
+          - in: path
+            name: id
+            schema:
+              type: integer
+            required: true
+            description: ID of part
+
+      
+        
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:          # <!--- form field name
+                  type: string
+                core_clock:    # <!--- form field name
+                  type: number
+                release_date:    # <!--- form field name
+                  type: integer
+                price:    # <!--- form field name
+                  type: number
+                part_no:    # <!--- form field name
+                  type: string
+                clock_unit:    # <!--- form field name
+                  type: string
+                type:    # <!--- form field name
+                  type: string
+                TDP:    # <!--- form field name
+                  type: integer
+                boost_clock:    # <!--- form field name
+                  type: number
+              required:
+                - name
+                - TDP
+                - core_clock
+                - clock_unit
+                - part_no
+                - price
+                - release_date
+                - type
+                
+      responses:
+        '200':
+          description: 200 OK.
+          content:
+            'application/json': {}
+
+        '400':
+          description: BAD REQUEST
+          content:
+            'application/json': {}
+    
+    patch:
+    
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of part
+          
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:          # <!--- form field name
+                  type: string
+                core_clock:    # <!--- form field name
+                  type: number
+                release_date:    # <!--- form field name
+                  type: integer
+                price:    # <!--- form field name
+                  type: number
+                part_no:    # <!--- form field name
+                  type: string
+                clock_unit:    # <!--- form field name
+                  type: string
+                type:    # <!--- form field name
+                  type: string
+                TDP:    # <!--- form field name
+                  type: integer
+                boost_clock:    # <!--- form field name
+                  type: number
+              
+
+                
+      responses:
+        '200':
+          description: 200 OK.
+          content:
+            'application/json': {}
+
+        '400':
+          description: BAD REQUEST
+          content:
+            'application/json': {}
+
+ 
+    delete:
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: ID of part
+      
+          
+
+      responses:
+        '200':
+          description: 200 OK.
+          content:
+            'application/json': {}
+
+        '400':
+          description: BAD REQUEST
+          content:
+            'application/json': {}
+            
+    get:
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: ID of part
+      
+          
+
+      responses:
+        '200':
+          description: 200 OK.
+          content:
+            'application/json': {}
+
+        '400':
+          description: BAD REQUEST
+          content:
+            'application/json': {}
+
+
+          
+  /parts:
+    get:
+      parameters:
+        - in: query
+          name: type
+          schema:
+            type: string
+          required: true
+          description: GPU/CPU
+            
+      responses:
+        '200':
+          description: 200 OK.
+          content:
+            'application/json': {}
+
+        '400':
+          description: BAD REQUEST
+          content:
+            'application/json': {}
+            
+            
+    put:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:          # <!--- form field name
+                  type: string
+                core_clock:    # <!--- form field name
+                  type: number
+                release_date:    # <!--- form field name
+                  type: integer
+                price:    # <!--- form field name
+                  type: number
+                part_no:    # <!--- form field name
+                  type: string
+                clock_unit:    # <!--- form field name
+                  type: string
+                type:    # <!--- form field name
+                  type: string
+                TDP:    # <!--- form field name
+                  type: integer
+          
+              
+
+                
+      responses:
+        '200':
+          description: 200 OK.
+          content:
+            'application/json': {}
+
+        '400':
+          description: BAD REQUEST/INVALID PARAMETERS
+          content:
+            'application/json': {}
+      
+        
+
+      
+      
+                
